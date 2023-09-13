@@ -14,7 +14,7 @@ pipeline {
 
     stage('build docker image') {
       steps {
-        sh 'docker image build -t riteshkadu/dockerfile-image:0.0.19 .'
+        sh 'sudo docker image build -t riteshkadu/dockerfile-image:0.0.19 .'
       }
     }
 
