@@ -18,5 +18,11 @@ pipeline {
       }
     }
 
+    stage('push docker image') {
+      steps {
+        sh 'sudo docker image push riteshkadu/dockerfile-image:0.0.19'
+      }
+    } 
+
   }
 }
