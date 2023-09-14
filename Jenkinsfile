@@ -14,7 +14,7 @@ pipeline {
 
     stage('check tag') {
       steps {
-        sh "source environmentfile && echo $tagName"
+        sh ". .environmentfile && echo $tagName"
       }
     }
 
