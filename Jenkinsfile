@@ -4,7 +4,11 @@ pipeline {
       label 'Node-Ritesh'
     }
 
+    parameters {
+      string description: 'This is for image tag', name: 'tagName'
+    }
   }
+  
   stages {
     stage('build') {
       steps {
@@ -14,13 +18,13 @@ pipeline {
 
     stage('build docker image') {
       steps {
-        sh 'sudo docker image build -t riteshkadu/dockerfile-image:0.0.19 .'
+        sh "sudo docker image build -t riteshkadu/dockerfile-image:${tagName} ."
       }
     }
 
     stage('push docker image') {
       steps {
-        sh 'sudo docker image push riteshkadu/dockerfile-image:0.0.19'
+        sh "sudo docker image push riteshkadu/dockerfile-image:${tagName}"
       }
     } 
 
