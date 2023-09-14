@@ -1,5 +1,1 @@
-try{
-  export tagName="0.0.21"
-} catch (theError) {
-println "Error"
-}
+export tagName="0.0.21"
