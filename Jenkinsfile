@@ -12,6 +12,12 @@ pipeline {
       }
     }
 
+    stage('check tag') {
+      steps {
+        sh "source environmentfile && echo $tagName"
+      }
+    }
+
     stage('build docker image') {
       steps {
         sh "source environmentfile && sudo docker image build -t riteshkadu/dockerfile-image:$tagName ."
