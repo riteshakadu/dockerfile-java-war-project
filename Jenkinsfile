@@ -3,10 +3,10 @@ pipeline {
     node {
       label 'Node-Ritesh'
     }
+  }
 
-    parameters {
-      string description: 'This is for image tag', name: 'tagName'
-    }
+  parameters {
+    string description: 'This is for image tag', name: 'tagName'
   }
   
   stages {
@@ -27,6 +27,5 @@ pipeline {
         sh "sudo docker image push riteshkadu/dockerfile-image:${tagName}"
       }
     } 
-
   }
 }
