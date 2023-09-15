@@ -9,7 +9,7 @@ pipeline {
         stage('Load Environment') {
             steps {
                 script {
-                    def envFile = load 'path/to/environmentfile'
+                    def envFile = load '.environmentfile'
                     env.tagName = envFile.tagName
                 }
             }
