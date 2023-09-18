@@ -22,12 +22,14 @@ pipeline {
 
     stage('build docker image') {
       steps {
+        sh 'chmod +x /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile'
         sh 'source . /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile && sudo docker image build -t riteshkadu/dockerfile-image:$tagName .'
       }
     }
 
     stage('push docker image') {
       steps {
+        sh 'chmod +x /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile'
         sh 'source . /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile && sudo docker image push riteshkadu/dockerfile-image:$tagName'
       }
     }
