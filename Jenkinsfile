@@ -15,7 +15,6 @@ pipeline {
 
     stage('check tag') {
       steps {
-        // sh ". /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile"
         sh '. /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile && echo $tagName'
       }
     }
@@ -29,7 +28,6 @@ pipeline {
 
     stage('push docker image') {
       steps {
-        sh 'chmod +x /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile'
         sh 'source . /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile && sudo docker image push riteshkadu/dockerfile-image:$tagName'
       }
     }
