@@ -22,13 +22,13 @@ pipeline {
 
     stage('build docker image') {
       steps {
-        sh "source environmentfile && sudo docker image build -t riteshkadu/dockerfile-image:$tagName ."
+        sh "source /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile && sudo docker image build -t riteshkadu/dockerfile-image:$tagName ."
       }
     }
 
     stage('push docker image') {
       steps {
-        sh "source environmentfile && sudo docker image push riteshkadu/dockerfile-image:$tagName"
+        sh "source /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile && sudo docker image push riteshkadu/dockerfile-image:$tagName"
       }
     }
 
