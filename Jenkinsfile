@@ -15,7 +15,7 @@ pipeline {
 
     stage('check tag') {
       steps {
-        sh "cat environmentfile && . .environmentfile"
+        sh "cat environmentfile && source environmentfile"
       }
     }
 
