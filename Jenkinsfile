@@ -15,7 +15,7 @@ pipeline {
 
     stage('check tag') {
       steps {
-        sh ". environmentfile"
+        sh ". /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile"
       }
     }
 
