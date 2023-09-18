@@ -15,7 +15,7 @@ pipeline {
 
     stage('check tag') {
       steps {
-        sh "cat environmentfile && pwd && sudo . environmentfile"
+        sh "cat environmentfile && pwd && id && . environmentfile"
       }
     }
 
