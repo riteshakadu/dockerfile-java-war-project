@@ -15,7 +15,8 @@ pipeline {
 
     stage('check tag') {
       steps {
-        sh ". /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile && echo $tagName"
+        sh ". /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile"
+        // sh ". /tmp/ritesh/workspace/ile-mvn-demo_feature_docker-cicd/environmentfile && echo $tagName"
       }
     }
 
