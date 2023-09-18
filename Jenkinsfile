@@ -15,10 +15,11 @@ pipeline {
 
     stage('check tag') {
       steps {
-        sh ". .environmentfile && echo $tagName"
+        sh "cat environmentfile && . .environmentfile && echo $tagName"
       }
     }
 
+    /*
     stage('build docker image') {
       steps {
         sh "source environmentfile && sudo docker image build -t riteshkadu/dockerfile-image:$tagName ."
@@ -29,6 +30,8 @@ pipeline {
       steps {
         sh "source environmentfile && sudo docker image push riteshkadu/dockerfile-image:$tagName"
       }
-    } 
+    }
+    */
+    
   }
 }
